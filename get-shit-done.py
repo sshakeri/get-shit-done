@@ -5,6 +5,7 @@ import sys
 import getpass
 import subprocess
 import os
+import random
 from os import path
 
 def exit_error(error):
@@ -72,6 +73,19 @@ def work():
     rehash()
 
 def play():
+    while True:
+        rnd1=random.randrange(10000, 10000000, 3)
+        rnd2=random.randrange(10, 50, 1)
+        question= "Chesse... READY? "+ `rnd1` + " plus "+`rnd2`
+        answer=`rnd1+rnd2`
+        sys.stdout.write(question )
+        choice = raw_input()
+        if answer ==choice:
+            break
+        else:
+            sys.stdout.write("No cheese.\n")
+
+    print("Ok!")
     hosts_file_handle = open(hosts_file, "r+")
     lines = hosts_file_handle.readlines()
 
